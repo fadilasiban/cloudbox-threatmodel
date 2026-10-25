@@ -21,6 +21,80 @@
         "cells": [
           {
             "position": {
+              "x": 493.99999999999864,
+              "y": 50.00000000000159
+            },
+            "size": {
+              "width": 490,
+              "height": 370
+            },
+            "attrs": {
+              "label": {
+                "text": "Cloud (Cloudbox)\n"
+              }
+            },
+            "visible": true,
+            "shape": "trust-boundary-box",
+            "id": "9a20217f-a751-4985-aec2-3fb86af5c202",
+            "zIndex": -1,
+            "data": {
+              "type": "tm.BoundaryBox",
+              "name": "Cloud (Cloudbox)\n",
+              "description": "",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false,
+              "crossingFlows": [
+                "d10ecf2c-fb4c-477d-9d3e-8e70957fdbf5",
+                "659234db-eed9-4080-9134-c4deb779d139",
+                "b006418c-561a-4174-b090-50bdbf468185",
+                "08cde326-5bb8-47d8-9bd8-b7c0bb1cd6ac"
+              ],
+              "containedElements": [
+                "d0c6ae4f-b808-42b4-95ac-aa8037c15738",
+                "eb84f873-2ada-40ac-bb5e-635460af9ca9",
+                "61a9045d-8252-4aba-b550-82b4e046d269",
+                "985da3d9-e837-4674-b706-edab5df98c2d",
+                "f96e71d6-5523-4cb9-b0ac-c123288fc2c5"
+              ]
+            }
+          },
+          {
+            "position": {
+              "x": 719.999999999999,
+              "y": 60.00000000000199
+            },
+            "size": {
+              "width": 230,
+              "height": 340
+            },
+            "attrs": {
+              "label": {
+                "text": "Datenhaltung"
+              }
+            },
+            "visible": true,
+            "shape": "trust-boundary-box",
+            "id": "d0c6ae4f-b808-42b4-95ac-aa8037c15738",
+            "zIndex": -1,
+            "data": {
+              "type": "tm.BoundaryBox",
+              "name": "Datenhaltung",
+              "description": "",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false,
+              "crossingFlows": [
+                "71da881c-da9c-4e75-8e3f-cb335a72b0a7",
+                "a405b196-b228-410a-9c06-c80979699314",
+                "0f770904-2437-499f-bef7-42bfabd1a72f"
+              ],
+              "containedElements": [
+                "985da3d9-e837-4674-b706-edab5df98c2d",
+                "f96e71d6-5523-4cb9-b0ac-c123288fc2c5"
+              ]
+            }
+          },
+          {
+            "position": {
               "x": 40,
               "y": 90
             },
@@ -889,7 +963,9 @@
               "isPublicNetwork": true,
               "protocol": "HTTPS",
               "threats": [],
-              "trustBoundaryIds": []
+              "trustBoundaryIds": [
+                "9a20217f-a751-4985-aec2-3fb86af5c202"
+              ]
             },
             "labels": [
               "Login"
@@ -936,7 +1012,9 @@
               "isPublicNetwork": true,
               "protocol": "HTTPS",
               "threats": [],
-              "trustBoundaryIds": []
+              "trustBoundaryIds": [
+                "9a20217f-a751-4985-aec2-3fb86af5c202"
+              ]
             },
             "labels": [
               "Datei hochladen/herunterladen,Token"
@@ -988,7 +1066,9 @@
               "isPublicNetwork": true,
               "protocol": "HTTPS",
               "threats": [],
-              "trustBoundaryIds": []
+              "trustBoundaryIds": [
+                "9a20217f-a751-4985-aec2-3fb86af5c202"
+              ]
             },
             "labels": [
               "Download über Freigabelink"
@@ -1040,7 +1120,9 @@
               "isPublicNetwork": true,
               "protocol": "HTTPS",
               "threats": [],
-              "trustBoundaryIds": []
+              "trustBoundaryIds": [
+                "9a20217f-a751-4985-aec2-3fb86af5c202"
+              ]
             },
             "labels": [
               "Verwaltung"
@@ -1139,7 +1221,9 @@
               "isPublicNetwork": false,
               "protocol": "HTTPS",
               "threats": [],
-              "trustBoundaryIds": []
+              "trustBoundaryIds": [
+                "d0c6ae4f-b808-42b4-95ac-aa8037c15738"
+              ]
             },
             "labels": [
               "Metadaten, Freigaben"
@@ -1186,7 +1270,9 @@
               "isPublicNetwork": false,
               "protocol": "HTTPS",
               "threats": [],
-              "trustBoundaryIds": []
+              "trustBoundaryIds": [
+                "d0c6ae4f-b808-42b4-95ac-aa8037c15738"
+              ]
             },
             "labels": [
               "Dateien lesen/schreiben"
@@ -1238,7 +1324,9 @@
               "isPublicNetwork": false,
               "protocol": "HTTPS",
               "threats": [],
-              "trustBoundaryIds": []
+              "trustBoundaryIds": [
+                "d0c6ae4f-b808-42b4-95ac-aa8037c15738"
+              ]
             },
             "labels": [
               "Zugangsdaten prüfen"
