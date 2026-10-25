@@ -22,7 +22,7 @@
           {
             "position": {
               "x": 493.99999999999864,
-              "y": 50.00000000000159
+              "y": 45.00000000000199
             },
             "size": {
               "width": 490,
@@ -30,7 +30,7 @@
             },
             "attrs": {
               "label": {
-                "text": "Cloud (Cloudbox)\n"
+                "text": "Cloud (CloudBox)\n"
               }
             },
             "visible": true,
@@ -39,7 +39,7 @@
             "zIndex": -1,
             "data": {
               "type": "tm.BoundaryBox",
-              "name": "Cloud (Cloudbox)\n",
+              "name": "Cloud (CloudBox)\n",
               "description": "",
               "isTrustBoundary": true,
               "hasOpenThreats": false,
@@ -338,7 +338,7 @@
             },
             "attrs": {
               "text": {
-                "text": "Administator"
+                "text": "Administrator"
               },
               "body": {
                 "stroke": "#333333",
@@ -434,7 +434,7 @@
             "id": "11a5ce08-bddb-4f09-9d2d-56fa9a8edf90",
             "data": {
               "type": "tm.Actor",
-              "name": "Administator",
+              "name": "Administrator",
               "description": "verwaltet das System",
               "isTrustBoundary": false,
               "outOfScope": false,
