@@ -341,8 +341,8 @@
                 "text": "Administrator"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -439,9 +439,27 @@
               "isTrustBoundary": false,
               "outOfScope": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "providesAuthentication": false,
-              "threats": []
+              "threats": [
+                {
+                  "id": "e94af2fa-d55b-443d-92ad-97a4b0eb7bd0",
+                  "title": "Admin Aktionen nicht nachvollziehbar",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Repudiation",
+                  "description": "Ein Administrator löscht oder ändert Daten und kann später abstreiten dies getan zu haben, weil keine Protokollierung exisitert",
+                  "mitigation": "Manipulationssichereres Audit Log aller Admin aktionen mit Benutzer und Timestamp, persönliche Admin Konten statt geteilter Konten",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 10,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 0,
+                "repudiation": 1
+              }
             }
           },
           {
@@ -458,8 +476,8 @@
                 "text": "Auth-Dienst"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -556,12 +574,34 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "49835988-8041-458a-8565-aa77354e0029",
+                  "title": "Account Übernahme ( durch schwaches Passwort oder Token Diebstahl)",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Spoofing",
+                  "description": "Angreifer übernimmt ein Konto durch erratene oder gestohlene Passwörter oder gestohlene Session Tokens und gibt sich als erlaubter Nutzer aus",
+                  "mitigation": "MFA, Passwortrichtlinie, Begrenzung von Login Versuchen, Kurze Token Laufzeit und sichere Cookie flags",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 6,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 1,
+                "tampering": 0,
+                "repudiation": 0,
+                "informationDisclosure": 0,
+                "denialOfService": 0,
+                "elevationOfPrivilege": 0
+              }
             }
           },
           {
@@ -578,8 +618,8 @@
                 "text": "Web-API"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -676,12 +716,47 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "17d95c03-d428-44c3-857b-011066c4f487",
+                  "title": "Zugriff auf dremde Dateien (IDOR)",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Elevation of privilege",
+                  "description": "Ein angemeldeter Nutzer ändert die Datei-ID in der Anfrage und erhält Zugriff auf dateien anderer Nutzer, weil die WEB-API die Eigentümerschaft nicht prüft",
+                  "mitigation": "Serverseitige Rechteprüfung bei jedem Zugriff: nicht ratbare IDs(UUID) automatisierte tests für Zugriffskontrolle",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 1,
+                  "score": ""
+                },
+                {
+                  "id": "d1f8b772-9d27-47de-873d-bf94eb8af97b",
+                  "title": "Überlastung durch massenhafte Anfragen",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Denial of service",
+                  "description": "Massenhafte Uploads, Downloads oder Login versuche überlasten die Web-API, sodass das system für legitime Nutzer nicht erreichbar ist",
+                  "mitigation": "Rate Limiting, Speicherquoten pro Nutzer, DDos-Schutz des Cloud Anbieters",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 9,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 0,
+                "tampering": 0,
+                "repudiation": 0,
+                "informationDisclosure": 0,
+                "denialOfService": 1,
+                "elevationOfPrivilege": 1
+              }
             }
           },
           {
@@ -822,11 +897,13 @@
                 "text": "Objektspeicher"
               },
               "topLine": {
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               },
               "bottomLine": {
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -923,13 +1000,33 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "isALog": false,
               "isEncrypted": false,
               "isSigned": false,
               "storesCredentials": false,
               "storesInventory": false,
-              "threats": []
+              "threats": [
+                {
+                  "id": "28f6349b-dad0-482e-a599-132601cb4e7d",
+                  "title": "Speicher versehentlich öffentlich lesbar",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information disclosure",
+                  "description": "Durch Fehlkonfiguration ist der Objektspeicher öffentlich erreichbar, alle Dateien können ohne anmeldung gelesen werden",
+                  "mitigation": "standart \"privat\", Zugriff nur über die Web-API, automatische Konfigurationsprüfung, verschlüsslung ",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 7,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "tampering": 0,
+                "repudiation": 0,
+                "informationDisclosure": 1,
+                "denialOfService": 0
+              }
             }
           },
           {
@@ -979,13 +1076,19 @@
               "cell": "eb84f873-2ada-40ac-bb5e-635460af9ca9",
               "port": "a5cb70ce-28df-47bd-afe5-75decd95643f"
             },
-            "vertices": []
+            "vertices": [
+              {
+                "x": 370,
+                "y": 120
+              }
+            ]
           },
           {
             "shape": "flow",
             "attrs": {
               "line": {
-                "stroke": "#333333",
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "targetMarker": {
                   "name": "block"
                 },
@@ -1006,15 +1109,34 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "isBidirectional": true,
               "isEncrypted": true,
               "isPublicNetwork": true,
               "protocol": "HTTPS",
-              "threats": [],
+              "threats": [
+                {
+                  "id": "b0b2f21d-1c85-4683-8488-a20d342e28eb",
+                  "title": "schädliche oder manipulierte Uploads",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "description": "Nutzer laden Schadsoftware oder Dateien mit manipulierten typen hoch, die andere Nutzer oder das System gefährden",
+                  "mitigation": "Virenscanner, Prüfung von Dateityp und Größe, Dateinamen bereinigen, hochgeladene Dateien nie auf dem Server ausführen",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 8,
+                  "score": ""
+                }
+              ],
               "trustBoundaryIds": [
                 "9a20217f-a751-4985-aec2-3fb86af5c202"
-              ]
+              ],
+              "threatFrequency": {
+                "tampering": 1,
+                "informationDisclosure": 0,
+                "denialOfService": 0
+              }
             },
             "labels": [
               "Datei hochladen/herunterladen,Token"
@@ -1039,7 +1161,8 @@
             "shape": "flow",
             "attrs": {
               "line": {
-                "stroke": "#333333",
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "targetMarker": {
                   "name": "block"
                 },
@@ -1060,15 +1183,34 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "isBidirectional": false,
               "isEncrypted": true,
               "isPublicNetwork": true,
               "protocol": "HTTPS",
-              "threats": [],
+              "threats": [
+                {
+                  "id": "dae96bee-cc74-4349-b320-9bcf28e26866",
+                  "title": "Freigabelink wird erraten oder weitergegeben",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information disclosure",
+                  "description": "Freigabelinks mit kurzen oder vorhersagbaren Tokens können erraten evtl. sogar berrechnet werden. Einmal weitergegebene Links sind unbegrenzt gültig.",
+                  "mitigation": "Lange Zufallstokens, Ablaufdatum, Widerruf dürch den Eigentümer. Optional Passwortschutz",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 2,
+                  "score": ""
+                }
+              ],
               "trustBoundaryIds": [
                 "9a20217f-a751-4985-aec2-3fb86af5c202"
-              ]
+              ],
+              "threatFrequency": {
+                "tampering": 0,
+                "informationDisclosure": 1,
+                "denialOfService": 0
+              }
             },
             "labels": [
               "Download über Freigabelink"
@@ -1085,6 +1227,10 @@
             "vertices": [
               {
                 "x": 340,
+                "y": 280
+              },
+              {
+                "x": 430,
                 "y": 280
               }
             ]
@@ -1220,10 +1366,29 @@
               "isEncrypted": true,
               "isPublicNetwork": false,
               "protocol": "HTTPS",
-              "threats": [],
+              "threats": [
+                {
+                  "id": "584870f7-a6e6-4300-aaf7-09be997aaa46",
+                  "title": "Abhören/Verändern interner Datenflüsse",
+                  "status": "Mitigated",
+                  "severity": "Low",
+                  "type": "Tampering",
+                  "description": "Daten zwischen Web-API und Datenbank könnten innerhalb der Cloud abgehört oder verändert werden",
+                  "mitigation": "TLS auf allen internen Verbindungen, Netzwerksegmentierung",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 11,
+                  "score": ""
+                }
+              ],
               "trustBoundaryIds": [
                 "d0c6ae4f-b808-42b4-95ac-aa8037c15738"
-              ]
+              ],
+              "threatFrequency": {
+                "tampering": 1,
+                "informationDisclosure": 0,
+                "denialOfService": 0
+              }
             },
             "labels": [
               "Metadaten, Freigaben"
@@ -1237,7 +1402,12 @@
               "cell": "985da3d9-e837-4674-b706-edab5df98c2d",
               "port": "bc870118-8f2b-45e2-8691-5013c32c7bd4"
             },
-            "vertices": []
+            "vertices": [
+              {
+                "x": 680,
+                "y": 240
+              }
+            ]
           },
           {
             "shape": "flow",
@@ -1348,6 +1518,6 @@
     ],
     "diagramTop": 2,
     "reviewer": "",
-    "threatTop": 0
+    "threatTop": 11
   }
 }
